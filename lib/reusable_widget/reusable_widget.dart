@@ -17,24 +17,24 @@ TextField reusableTextField(
     enableSuggestions: isPasswordType,
     autocorrect: isPasswordType,
     cursorColor: Colors.black,
-    style: TextStyle(
+    style: const TextStyle(
       color: Colors.black,
     ),
     decoration: InputDecoration(
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: Colors.black,
           width: 1.5,
         ),
       ),
-      border: OutlineInputBorder(
+      border: const OutlineInputBorder(
         borderSide: BorderSide(
           color: Colors.black,
           width: 1.5,
         ),
       ),
       hintText: text,
-      hintStyle: TextStyle(color: Color.fromARGB(255, 217, 217, 217)),
+      hintStyle: const TextStyle(color: Color.fromARGB(255, 217, 217, 217)),
     ),
     keyboardType: isPasswordType
         ? TextInputType.visiblePassword
@@ -53,7 +53,7 @@ Container accountButton(BuildContext context, String title, Function onTap) {
       },
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 22,
           color: Colors.white,
         ),
@@ -64,7 +64,7 @@ Container accountButton(BuildContext context, String title, Function onTap) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.lightBlue;
             }
-            return Color.fromARGB(255, 0, 143, 191);
+            return const Color.fromARGB(255, 0, 143, 191);
           },
         ),
       ),
@@ -84,7 +84,7 @@ Container googleButton(BuildContext context, String title, Function onTap) {
       icon: Image.asset("assets/images/google.png"),
       label: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 22,
           color: Colors.white,
         ),
@@ -95,7 +95,7 @@ Container googleButton(BuildContext context, String title, Function onTap) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.lightBlue;
             }
-            return Color.fromARGB(255, 0, 143, 191);
+            return const Color.fromARGB(255, 0, 143, 191);
           },
         ),
       ),

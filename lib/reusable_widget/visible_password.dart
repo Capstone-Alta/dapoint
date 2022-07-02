@@ -16,24 +16,24 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return TextField(
       obscureText: _isObsecure,
       cursorColor: Colors.black,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.black,
       ),
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.black,
             width: 1.5,
           ),
         ),
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.black,
             width: 1.5,
           ),
         ),
         hintText: "Password",
-        hintStyle: TextStyle(color: Color.fromARGB(255, 217, 217, 217)),
+        hintStyle: const TextStyle(color: Color.fromARGB(255, 217, 217, 217)),
         suffixIcon: IconButton(
           onPressed: () {
             setState(() {

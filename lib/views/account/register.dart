@@ -1,5 +1,4 @@
 import 'package:dapoint/reusable_widget/visible_password.dart';
-import 'package:dapoint/views/home/home.dart';
 import 'package:flutter/material.dart';
 
 import '../../reusable_widget/reusable_widget.dart';
@@ -13,7 +12,6 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-TextEditingController _nameController = TextEditingController();
 TextEditingController _emailController = TextEditingController();
 TextEditingController _passwordController = TextEditingController();
 
@@ -23,113 +21,111 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           height: MediaQuery.of(context).size.height,
           child: Stack(
             children: <Widget>[
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Center(
-                          child: Image.asset(
-                            "assets/images/Mask group-1.png",
-                          ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Center(
+                        child: Image.asset(
+                          "assets/images/Mask group-1.png",
                         ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10),
+                    child: const Text(
+                      "Register",
+                      style: TextStyle(
+                          fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const Text(
+                          'Name',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        reusableTextField(
+                            "Enter Your Name", false, _emailController)
                       ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Register",
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Name',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          reusableTextField(
-                              "Enter Your Name", false, _emailController)
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Username',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          reusableTextField("Enter Your Email Address", false,
-                              _emailController)
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'Password',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          PasswordTextField(controller: _passwordController),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    accountButton(context, "Register", () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    }),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Or continue with"),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const Text(
+                          'Username',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        reusableTextField("Enter Your Email Address", false,
+                            _emailController)
                       ],
                     ),
-                    SizedBox(
-                      height: 15,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        const Text(
+                          'Password',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        PasswordTextField(controller: _passwordController),
+                      ],
                     ),
-                    googleButton(context, "Login with Google", () {}),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 20,),
+                  accountButton(context, "Register", () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Login()));
+                  }),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text("Or continue with"),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  googleButton(context, "Login with Google", () {}),
+                ],
               ),
             ],
           ),
@@ -142,7 +138,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
+        const Text(
           "Don't have account? ",
         ),
         GestureDetector(
@@ -150,11 +146,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SignUpScreen(),
+                builder: (context) => const SignUpScreen(),
               ),
             );
           },
-          child: Text(
+          child: const Text(
             "Register",
             style: TextStyle(
               color: Color.fromARGB(255, 25, 133, 49),
@@ -173,8 +169,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       alignment: Alignment.bottomRight,
       child: TextButton(
         onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ResetPassword())),
-        child: Text(
+            context, MaterialPageRoute(builder: (context) => const ResetPassword())),
+        child: const Text(
           "Forgot Password?",
           style: TextStyle(color: Colors.red),
           textAlign: TextAlign.right,

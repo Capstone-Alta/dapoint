@@ -1,4 +1,4 @@
-import 'package:dapoint/views/home/home.dart';
+import 'package:dapoint/views/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Dapoint',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'FontInter',
       ),
-      home: MyHomePage(),
+      home: const SplashScreen(),
     );
   }
 }
