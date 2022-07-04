@@ -1,4 +1,8 @@
+import 'package:dapoint/views/history/history.dart';
 import 'package:dapoint/views/home/home.dart';
+import 'package:dapoint/views/home/widgets/voucher.dart';
+import 'package:dapoint/views/profile/profile_page/profile_page.dart';
+import 'package:dapoint/views/voucher/voucher_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeNav extends StatefulWidget {
@@ -10,7 +14,7 @@ class HomeNav extends StatefulWidget {
 
 class _HomeNavState extends State<HomeNav> {
   int _selectedIndex = 0;
-  final _layoutPage = [const MyHomePage()];
+  final _layoutPage = [const MyHomePage(), VoucherPage(), History(), ProfilePage()];
   void _onTabItem(int index) {
     setState(() {
       _selectedIndex = index;
