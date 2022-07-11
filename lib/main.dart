@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => NavigationViewModel()),
         ChangeNotifierProvider(
             create: (_) => VoucherViewModel()..getListVoucher()),
-        ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
+        // ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

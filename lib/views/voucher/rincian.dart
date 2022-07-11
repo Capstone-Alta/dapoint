@@ -14,7 +14,7 @@ class RincianPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TransactionsViewModel transVM = Provider.of(context, listen: false);
+    // TransactionsViewModel transVM = Provider.of(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -65,7 +65,7 @@ class RincianPage extends StatelessWidget {
           contentPadding: EdgeInsets.only(right: 30, left: 30),
           title: Text("Penukaran"),
           trailing: Text(
-            "Rp.5500",
+            "RP.${voucher.price}",
             style: TextStyle(color: Color.fromRGBO(177, 20, 27, 1)),
           ),
         ),
@@ -82,7 +82,7 @@ class RincianPage extends StatelessWidget {
             width: double.infinity,
             child: TextButton(
               onPressed: () {
-                transVM.addTrans(voucher);
+                // transVM.addTrans(voucher);
                 showDialog(
                     context: context,
                     builder: (BuildContext context) => CustomAlert());
