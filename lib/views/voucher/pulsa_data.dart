@@ -1,12 +1,17 @@
 import 'package:dapoint/views/voucher/widgets/cardname.dart';
 import 'package:dapoint/views/voucher/widgets/header.dart';
-import 'package:dapoint/views/voucher/widgets/jenisVoucher.dart';
-import 'package:dapoint/views/voucher/widgets/ketegori.dart';
+import 'package:dapoint/views/voucher/widgets/tab_bart.dart';
 import 'package:flutter/material.dart';
 
-class VoucherPage extends StatelessWidget {
-  const VoucherPage({Key? key}) : super(key: key);
+class PulsaDataPage extends StatefulWidget {
+  PulsaDataPage({Key? key}) : super(key: key);
 
+  @override
+  State<PulsaDataPage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<PulsaDataPage> {
+  TextEditingController noHP = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +24,10 @@ class VoucherPage extends StatelessWidget {
                 const SizedBox(
                   height: 64,
                 ),
-                Pilihan(),
+                TabBarPulsa(),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
-                Kategori()
               ],
             ),
             const CardName(),
