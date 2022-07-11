@@ -1,12 +1,17 @@
 import 'package:dapoint/views/voucher/widgets/cardname.dart';
 import 'package:dapoint/views/voucher/widgets/header.dart';
 import 'package:dapoint/views/voucher/widgets/jenisVoucher.dart';
-import 'package:dapoint/views/voucher/widgets/ketegori.dart';
+import 'package:dapoint/views/voucher/widgets/kategori%20_operator.dart';
 import 'package:flutter/material.dart';
 
-class VoucherPage extends StatelessWidget {
-  const VoucherPage({Key? key}) : super(key: key);
+class PulsaDataKategoriPage extends StatefulWidget {
+  const PulsaDataKategoriPage({Key? key}) : super(key: key);
 
+  @override
+  State<PulsaDataKategoriPage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<PulsaDataKategoriPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +24,14 @@ class VoucherPage extends StatelessWidget {
                 const SizedBox(
                   height: 64,
                 ),
-                Pilihan(),
+                Pilihan1(),
                 const SizedBox(
                   height: 8,
                 ),
-                Kategori()
+                KategoriOperator(),
+                const SizedBox(
+                  height: 8,
+                ),
               ],
             ),
             const CardName(),

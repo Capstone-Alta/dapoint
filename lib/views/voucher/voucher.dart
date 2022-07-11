@@ -4,9 +4,14 @@ import 'package:dapoint/views/voucher/widgets/jenisVoucher.dart';
 import 'package:dapoint/views/voucher/widgets/ketegori.dart';
 import 'package:flutter/material.dart';
 
-class VoucherPage extends StatelessWidget {
+class VoucherPage extends StatefulWidget {
   const VoucherPage({Key? key}) : super(key: key);
 
+  @override
+  State<VoucherPage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<VoucherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
