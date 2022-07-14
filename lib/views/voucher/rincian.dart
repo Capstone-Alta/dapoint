@@ -14,7 +14,7 @@ class RincianPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TransactionsViewModel transVM = Provider.of(context, listen: false);
+    TransactionsViewModel transVM = Provider.of(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -82,7 +82,7 @@ class RincianPage extends StatelessWidget {
             width: double.infinity,
             child: TextButton(
               onPressed: () {
-                // transVM.addTrans(voucher);
+                transVM.addTrans(voucher);
                 showDialog(
                     context: context,
                     builder: (BuildContext context) => CustomAlert());

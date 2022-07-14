@@ -16,21 +16,22 @@ class _HistoryState extends State<History> {
   Widget build(BuildContext context) {
     TransactionsViewModel transVM = Provider.of<TransactionsViewModel>(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: mainColor,
-        title: Text("History"),
-        centerTitle: true,
-      ),
-      body: ListView(
-        children: transVM.trans
-            .map(
-              (e) => StatusPending(
-                e,
-                transactions: e,
-              ),
-            )
-            .toList(),
-      ),
-    );
+        appBar: AppBar(
+          backgroundColor: mainColor,
+          title: Text("History"),
+          centerTitle: true,
+        ),
+        body: ListView(
+          children: [StatusPending()],
+          //   children: transVM.
+          //       .map(
+          //         (e) => StatusPending(
+          //           e,
+          //           transactions: e,
+          //         ),
+          //       )
+          //       .toList(),
+          // ),
+        ));
   }
 }
