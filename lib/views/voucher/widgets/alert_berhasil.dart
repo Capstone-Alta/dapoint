@@ -1,4 +1,5 @@
 import 'package:dapoint/constants.dart';
+import 'package:dapoint/views/history/history.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlert extends StatelessWidget {
@@ -48,7 +49,10 @@ class CustomAlert extends StatelessWidget {
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white)),
               child: Text('Okay'),
-              onPressed: () => {Navigator.of(context).pop()},
+              onPressed: () => {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => History()))
+              },
             ),
           ],
         ),
