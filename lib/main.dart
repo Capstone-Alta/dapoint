@@ -1,35 +1,92 @@
-import 'package:dapoint/viewModels/navigation_view_model.dart';
-import 'package:dapoint/viewModels/transactions._view_model.dart';
-import 'package:dapoint/viewModels/voucher_view_model.dart';
+import 'package:dapoint/views/account/login_view_model.dart';
+import 'package:dapoint/views/account/register_view_model.dart';
+import 'package:dapoint/views/home/home.dart';
+import 'package:dapoint/views/navigation/navigation_view_model.dart';
+import 'package:dapoint/views/voucher/transactions._view_model.dart';
+import 'package:dapoint/views/voucher/voucher_view_model.dart';
 import 'package:dapoint/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MultiProvider(
+//       providers: [
+//         ChangeNotifierProvider(create: (_) => NavigationViewModel()),
+//         ChangeNotifierProvider(
+//             create: (_) => VoucherViewModel()..getListVoucher()),
+//         ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
+//         ChangeNotifierProvider(create: (_) => RegisterViewModel()),
+//         ChangeNotifierProvider(create: (_) => LoginViewModel()),
+//       ],
+//       child: MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         title: 'Dapoint',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
+//           fontFamily: 'FontInter',
+//         ),
+//         home: const SplashScreen(),
+//       ),
+//     );
+//   }
+// }
+
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String? token;
+
+  @override
+  void initState() {
+    super.initState();
+    getToken();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (context) => LoginViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => RegisterViewModel(),
+        ),
         ChangeNotifierProvider(create: (_) => NavigationViewModel()),
+        ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
         ChangeNotifierProvider(
             create: (_) => VoucherViewModel()..getListVoucher()),
-        ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Dapoint',
+        title: 'MyApp',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
           fontFamily: 'FontInter',
         ),
-        home: const SplashScreen(),
+        home: token != null ? const MyHomePage() : const SplashScreen(),
       ),
     );
+  }
+
+  getToken() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+
+    setState(() {
+      token = pref.getString("token");
+    });
   }
 }

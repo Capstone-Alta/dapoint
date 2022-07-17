@@ -57,8 +57,8 @@ class Operator {
 }
 
 class OperatorList {
-  static final String xl = "icon_voucher/xl.png";
-  static final String telkomsel = "icon_voucher/TELKOMSEL.jpg";
+  static final String xl = "assets/icon_voucher/xl.png";
+  static final String telkomsel = "assets/icon_voucher/TELKOMSEL.jpg";
   static List<Operator> fetchOperators() {
     return [
       Operator(operator: "XL", image: xl),
