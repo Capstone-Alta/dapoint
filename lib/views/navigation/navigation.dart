@@ -1,8 +1,8 @@
-import 'package:dapoint/viewModels/navigation_view_model.dart';
+import 'package:dapoint/views/navigation/navigation_view_model.dart';
 import 'package:dapoint/views/history/history.dart';
 import 'package:dapoint/views/home/home.dart';
 import 'package:dapoint/views/home/widgets/voucher.dart';
-import 'package:dapoint/views/profile/profile_page/profile_page.dart';
+import 'package:dapoint/views/profile/profile_page.dart';
 import 'package:dapoint/views/voucher/voucher_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

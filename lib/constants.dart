@@ -7,3 +7,5 @@ Color suksesColor = const Color.fromRGBO(76, 175, 80, 1);
 
 Color pendingColor = Color.fromRGBO(194, 188, 0, 1);
 Color gagalColor = Color.fromRGBO(177, 20, 27, 1);
+
+enum DataState { loading, filled, error }

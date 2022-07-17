@@ -8,39 +8,30 @@ class IconVoucher {
 
 List<IconVoucher> iconVoucher = [
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/gopay.png",
+    gambar: "assets/icon_voucher/gopay.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/shopee.png",
+    gambar: "assets/icon_voucher/shopee.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/shopee.png",
+    gambar: "assets/icon_voucher/shopee.png",
   ),
   IconVoucher(
-    gambar:
-        "assets/icon_voucher/shopee.png",
+    gambar: "assets/icon_voucher/shopee.png",
   ),
 ];

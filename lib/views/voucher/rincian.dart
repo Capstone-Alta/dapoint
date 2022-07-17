@@ -1,6 +1,6 @@
 import 'package:dapoint/constants.dart';
 import 'package:dapoint/models/voucher.dart';
-import 'package:dapoint/viewModels/transactions._view_model.dart';
+import 'package:dapoint/views/voucher/transactions._view_model.dart';
 import 'package:dapoint/views/voucher/widgets/alert_berhasil.dart';
 
 import 'package:flutter/material.dart';

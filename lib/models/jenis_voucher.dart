@@ -6,9 +6,9 @@ class JenisVoucher {
 }
 
 class JenisVoucherList {
-  static final String pd = "icon_voucher/pulsa_data.png";
-  static final String cashout = "icon_voucher/cashout.png";
-  static final String emoney = "icon_voucher/emoneyv.png";
+  static final String pd = "assets/icon_voucher/pulsa_data.png";
+  static final String cashout = "assets/icon_voucher/cashout.png";
+  static final String emoney = "assets/icon_voucher/emoneyv.png";
   static List<JenisVoucher> fetchVoucher() {
     return [
       JenisVoucher(jenisVoucher: "Pulsa & Data", image: pd),

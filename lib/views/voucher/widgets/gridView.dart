@@ -4,7 +4,7 @@ import 'package:dapoint/views/voucher/rincian.dart';
 import 'package:dapoint/views/voucher/widgets/alert_berhasil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dapoint/viewModels/voucher_view_model.dart';
+import 'package:dapoint/views/voucher/voucher_view_model.dart';
 
 class GridViewc extends StatefulWidget {
   GridViewc({Key? key}) : super(key: key);

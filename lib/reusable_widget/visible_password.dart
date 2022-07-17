@@ -13,7 +13,14 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   bool _isObsecure = true;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (password) {
+        if (password == null || password.isEmpty) {
+          return 'Password cannot be empty';
+        } else {
+          return null;
+        }
+      },
       obscureText: _isObsecure,
       cursorColor: Colors.black,
       style: const TextStyle(
