@@ -1,6 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:dapoint/constants.dart';
 import 'package:dapoint/models/jenis_voucher.dart';
 import 'package:dapoint/views/profile/fqa.dart';
+import 'package:dapoint/views/profile/pengaturan_akun.dart';
 import 'package:dapoint/views/voucher/widgets/pulsa_datakategori.dart';
 
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class Kategori extends StatelessWidget {
       child: Column(
         children: [
           Card(
-            color: Colors.blue,
+            color: mainColor,
             child: Container(
               height: 60,
               child: Center(
@@ -38,16 +40,16 @@ class Kategori extends StatelessWidget {
                     Icons.arrow_forward_ios_sharp,
                     color: Colors.white,
                   ),
-                  // onTap: () {
-                  //   Navigator.of(context).push(MaterialPageRoute(
-                  //       builder: (context) => PulsaDataKategoriPage()));
-                  // },
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PengaturanAkun()));
+                  },
                 ),
               ),
             ),
           ),
           Card(
-            color: Colors.blue,
+            color: mainColor,
             child: Container(
               height: 60,
               child: Center(

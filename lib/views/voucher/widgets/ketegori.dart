@@ -1,4 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:dapoint/constants.dart';
 import 'package:dapoint/models/jenis_voucher.dart';
 import 'package:dapoint/views/voucher/widgets/pulsa_datakategori.dart';
 
@@ -19,7 +20,7 @@ class Kategori extends StatelessWidget {
       child: Column(
         children: [
           Card(
-            color: Colors.blue,
+            color: mainColor,
             child: Container(
               height: 60,
               child: Center(
@@ -49,7 +50,7 @@ class Kategori extends StatelessWidget {
             ),
           ),
           Card(
-            color: Colors.blue,
+            color: mainColor,
             child: Container(
               height: 60,
               child: Center(
@@ -77,7 +78,7 @@ class Kategori extends StatelessWidget {
             ),
           ),
           Card(
-            color: Colors.blue,
+            color: mainColor,
             child: Container(
               height: 60,
               child: Center(

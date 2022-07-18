@@ -1,5 +1,7 @@
 import 'package:dapoint/constants.dart';
 import 'package:dapoint/views/history/history.dart';
+import 'package:dapoint/views/home/home.dart';
+import 'package:dapoint/views/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlert extends StatelessWidget {
@@ -21,7 +23,7 @@ class CustomAlert extends StatelessWidget {
               width: 158,
               height: 127,
               child: Image.asset(
-                "images/alert.png", width: double.infinity,
+                "assets/images/alert.png", width: double.infinity,
                 // height: 1,
                 fit: BoxFit.fill,
               ),
@@ -51,7 +53,7 @@ class CustomAlert extends StatelessWidget {
               child: Text('Okay'),
               onPressed: () => {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => History()))
+                    .push(MaterialPageRoute(builder: (context) => HomeNav()))
               },
             ),
           ],
