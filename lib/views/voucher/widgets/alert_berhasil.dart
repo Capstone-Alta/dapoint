@@ -21,7 +21,7 @@ class CustomAlert extends StatelessWidget {
               width: 158,
               height: 127,
               child: Image.asset(
-                "images/alert.png", width: double.infinity,
+                "assets/images/alert.png", width: double.infinity,
                 // height: 1,
                 fit: BoxFit.fill,
               ),

@@ -40,7 +40,7 @@ class RincianPage extends StatelessWidget {
           leading: Container(
             width: 24,
             height: 30,
-            child: Image.asset("icon_voucher/pulsa.png"),
+            child: Image.asset("assets/icon_voucher/pulsa.png"),
           ),
           title: Text("Telkomsel"),
           trailing: Text(
