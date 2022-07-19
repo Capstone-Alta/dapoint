@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dapoint/models/api/profilemodel.dart';
 import 'package:dapoint/models/api/usermodel.dart';
+import 'package:dapoint/models/api/voucherlmodel.dart';
+
 import 'package:dio/dio.dart';
 
 class Api {
@@ -9,7 +12,7 @@ class Api {
 
   Api() {
     BaseOptions options = BaseOptions(
-      baseUrl: 'http://159.223.81.185:5011',
+      baseUrl: 'https://dapoint-api.herokuapp.com',
     );
 
     dio = Dio(options);
@@ -63,5 +66,23 @@ class Api {
       }
       throw Exception(e.message);
     }
+  }
+
+  static Future<User> profile() async {
+    Response userData =
+        await Dio().get('https://dapoint-api.herokuapp.com/user/4');
+
+    User user = User.fromJson(userData.data);
+
+    return user;
+  }
+
+  static Future<VoucherModel> voucher() async {
+    Response userData =
+        await Dio().get('https://dapoint-api.herokuapp.com/user/voucher/4');
+
+    VoucherModel voucher = VoucherModel.fromJson(userData.data);
+
+    return voucher;
   }
 }

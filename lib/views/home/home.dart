@@ -1,5 +1,6 @@
-import 'package:dapoint/views/home/widgets/cardname.dart';
-import 'package:dapoint/views/home/widgets/header.dart';
+import 'package:dapoint/reusable_widget/cardname.dart';
+
+import 'package:dapoint/reusable_widget/header.dart';
 import 'package:dapoint/views/home/widgets/offer.dart';
 import 'package:dapoint/views/home/widgets/promotion.dart';
 import 'package:dapoint/views/home/widgets/voucher.dart';
@@ -28,7 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Voucher(),
                 const Promotion(),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 const Offer()
               ],
             ),

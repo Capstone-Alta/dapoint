@@ -1,3 +1,6 @@
+import 'package:dapoint/constants.dart';
+import 'package:dapoint/models/api/api.dart';
+import 'package:dapoint/models/api/profilemodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -44,51 +47,85 @@ class _PengaturanAkunState extends State<PengaturanAkun> {
               color: Colors.black,
             )),
         title: Text(
-          "FPengaturan Akun",
+          "Pengaturan Akun",
           style: TextStyle(
               color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 30),
-        child: Column(
-          children: [
-            TextField(
-              enabled: _isDisabled,
-              //  _isDisabled = false -> enbalbed = true
-              // _isDisabled = true -> enable = false
-
-              controller: _controller,
-              decoration: const InputDecoration(
-                labelText: 'Label',
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _isDisabled = _isDisabled;
-                    buttonText = 'Simpan';
-                  });
-                },
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.red)),
-                child: Text(buttonText)),
-            SwitchListTile(
-              value: _isDisabled,
-              onChanged: (value) {
-                setState(() {
-                  _isDisabled = value;
-                });
-              },
-              title: const Text('TextField is disabled'),
-            ),
-          ],
-        ),
+      body: FutureBuilder<User?>(
+        future: Api.profile(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            User? userInfo = snapshot.data;
+            if (userInfo != null) {
+              Data userData = userInfo.data;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(right: 30, left: 30, top: 20),
+                    child: Column(
+                      children: [
+                        TextField(
+                          enabled: _isDisabled,
+                          controller:
+                              TextEditingController(text: userData.name),
+                          decoration: const InputDecoration(
+                            labelText: "Name",
+                          ),
+                        ),
+                        TextField(
+                          enabled: _isDisabled,
+                          controller:
+                              TextEditingController(text: userData.email),
+                          decoration: const InputDecoration(
+                            labelText: "Email",
+                          ),
+                        ),
+                        TextField(
+                          enabled: _isDisabled,
+                          decoration: const InputDecoration(
+                            labelText: "Phone",
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            top: 30,
+                            bottom: 35,
+                          ),
+                          width: double.infinity,
+                          height: 45,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromRGBO(0, 143, 191, 1),
+                              textStyle: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              'Edit',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              );
+            }
+          }
+          return Center(
+              child: CircularProgressIndicator(
+            color: mainColor,
+          ));
+        },
       ),
     );
   }

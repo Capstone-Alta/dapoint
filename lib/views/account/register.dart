@@ -3,7 +3,6 @@ import 'package:dapoint/reusable_widget/visible_password.dart';
 import 'package:dapoint/views/account/register_view_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../reusable_widget/reusable_widget.dart';
 import 'login.dart';
 import 'reset_password.dart';
 import 'package:provider/provider.dart';

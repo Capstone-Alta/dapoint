@@ -1,5 +1,5 @@
-import 'package:dapoint/views/voucher/widgets/cardname.dart';
-import 'package:dapoint/views/voucher/widgets/header.dart';
+import 'package:dapoint/reusable_widget/cardname.dart';
+import 'package:dapoint/reusable_widget/header.dart';
 import 'package:dapoint/views/voucher/widgets/tab_bart.dart';
 import 'package:flutter/material.dart';
 

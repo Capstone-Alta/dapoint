@@ -1,4 +1,5 @@
 import 'package:dapoint/constants.dart';
+import 'package:dapoint/models/api/voucherlmodel.dart';
 import 'package:dapoint/models/voucher.dart';
 import 'package:dapoint/views/voucher/transactions._view_model.dart';
 import 'package:dapoint/views/voucher/widgets/alert_berhasil.dart';
@@ -9,7 +10,9 @@ import 'package:provider/provider.dart';
 class RincianPage extends StatelessWidget {
   RincianPage({required this.voucher, required this.noHP, Key? key})
       : super(key: key);
-  Voucher voucher;
+
+  VoucherModel voucher;
+
   final String noHP;
 
   @override
@@ -44,7 +47,7 @@ class RincianPage extends StatelessWidget {
           ),
           title: Text("Telkomsel"),
           trailing: Text(
-            voucher.description,
+            voucher.data.name,
             style: TextStyle(color: Color.fromRGBO(76, 175, 80, 1)),
           ),
         ),
@@ -65,7 +68,7 @@ class RincianPage extends StatelessWidget {
           contentPadding: EdgeInsets.only(right: 30, left: 30),
           title: Text("Penukaran"),
           trailing: Text(
-            "RP.${voucher.price}",
+            "RP.${voucher.data.nominal}",
             style: TextStyle(color: Color.fromRGBO(177, 20, 27, 1)),
           ),
         ),
