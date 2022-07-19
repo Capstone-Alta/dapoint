@@ -13,33 +13,6 @@ void main() {
   runApp(const MyApp());
 }
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MultiProvider(
-//       providers: [
-//         ChangeNotifierProvider(create: (_) => NavigationViewModel()),
-//         ChangeNotifierProvider(
-//             create: (_) => VoucherViewModel()..getListVoucher()),
-//         ChangeNotifierProvider(create: (_) => TransactionsViewModel()),
-//         ChangeNotifierProvider(create: (_) => RegisterViewModel()),
-//         ChangeNotifierProvider(create: (_) => LoginViewModel()),
-//       ],
-//       child: MaterialApp(
-//         debugShowCheckedModeBanner: false,
-//         title: 'Dapoint',
-//         theme: ThemeData(
-//           primarySwatch: Colors.blue,
-//           fontFamily: 'FontInter',
-//         ),
-//         home: const SplashScreen(),
-//       ),
-//     );
-//   }
-// }
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -73,7 +46,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'MyApp',
+        title: 'Dapoint',
         theme: ThemeData(
           fontFamily: 'FontInter',
         ),

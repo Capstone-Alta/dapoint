@@ -1,3 +1,4 @@
+import 'package:dapoint/constants.dart';
 import 'package:dapoint/views/voucher/pulsa_data.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class KategoriOperator extends StatelessWidget {
         child: ListView.builder(
           itemBuilder: (BuildContext context, int index) {
             return Card(
-              color: Colors.blue,
+              color: mainColor,
               child: Container(
                 height: 60,
                 child: Center(

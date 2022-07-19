@@ -25,13 +25,13 @@ class StatusPending extends StatelessWidget {
                             fontWeight: FontWeight.w600, fontSize: 14),
                       ),
                       subtitle: Text(
-                        transVM.trans[index].transaction_date.day.toString(),
+                        transVM.trans[index].transaction_date.toString(),
                         style: TextStyle(
                           color: date,
                         ),
                       ),
                       trailing: Text(
-                        transVM.trans[index].transaction_date.toString(),
+                        transVM.trans[index].transaction_detail,
                         style: TextStyle(
                           color: leadinghistory,
                         ),

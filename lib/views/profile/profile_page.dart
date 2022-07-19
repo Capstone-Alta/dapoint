@@ -1,6 +1,7 @@
+import 'package:dapoint/reusable_widget/cardname.dart';
 import 'package:flutter/material.dart';
-import 'package:dapoint/views/profile/widgets/cardname.dart';
-import 'package:dapoint/views/profile/widgets/header.dart';
+
+import 'package:dapoint/reusable_widget/header.dart';
 import 'package:dapoint/views/voucher/widgets/jenisVoucher.dart';
 import 'package:dapoint/views/profile/widgets/ketegori.dart';
 import 'package:flutter/material.dart';
